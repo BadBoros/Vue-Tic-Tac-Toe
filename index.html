@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Vue Tic-Tac-Toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+    
+    
+    <div id="app">
+
+      <h1>Tic Tac Toe</h1>
+      <h2>Player</h2>
+
+      <div class="block small" :class="{circle: turn == 1, cross: turn == -1}"></div>
+
+      <div class="blockArea"> 
+
+        <div class="block" v-for="(block, id) in blocks" :class="{circle: block.type == 1, cross: block.type == -1}" @click="playGo(block)"></div>
+
+      </div>
+
+      <h2 class="btn" @click="restart">Restart</h2>
+      <h1>{{ winText }}</h1>
+
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+    <script  src="js/index.js"></script>
+
+  </body>
+
+</html>
